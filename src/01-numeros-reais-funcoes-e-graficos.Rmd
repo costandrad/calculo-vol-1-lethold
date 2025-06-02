@@ -1,0 +1,112 @@
+---
+title: ""
+author: "Igo da Costa Andrade"
+
+# Metadados
+booktitle: "O Cálculo com Geometria Analítica"
+booksubtitle: "Volume 1"
+bookauthors: "Lethold, L."
+bookaddres: "São Paulo"
+bookpublisher: "Editora Harbra"
+bookyear: "1994"
+maincolor: "ff784c"
+chaptertitle: "Números Reais, Funções e Gráficos"
+chapternumber: "1"
+
+output: 
+  bookdown::pdf_document2:
+    template: template.tex
+knit: >-
+  (function(inputFile, encoding) {
+    rmarkdown::render(
+      input = inputFile,
+      encoding = encoding,
+      output_dir = file.path(dirname(inputFile), "../output"),
+      output_format = "bookdown::pdf_document2"
+    )
+  })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+\section*{EXERCÍCIOS 1.1}
+
+\textit{Nos Exercícios de 1 a 22, ache o conjunto-solução da desigualdade dada e mostra-o na reta numérica real.}
+
+\begin{enumerate}
+  \item $5x + 2 > x + 6$\\
+  \iniSol
+  \begin{minipage}[b]{0.45\textwidth}
+  \begin{align*}
+  5x + 2 > x + 6 & \Rightarrow 5x - x > -6 - 2\\
+    &\Rightarrow 4x > -8 \\
+    &\Rightarrow x > \dfrac{-8}{4}\\
+    &\Rightarrow x > -2
+  \end{align*}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\textwidth}
+    Conjunto-solução: $\{x | x > -2\}$ ou $(-2, + \infty)$.\\ \\
+    \begin{center}
+    \begin{tikzpicture}
+      \draw[-latex] (-3, 0) -- (3, 0) node[below]{$x$};
+      \draw (0, 5pt) -- (0, -5pt) node[below] {$0$};
+      \draw (-2, 5pt) -- (-2, -5pt) node[below] {$-2$};
+      \draw[mainColor, ->, ultra thick] (-2, 0) -- (2.8, 0);
+    \end{tikzpicture}
+    \end{center}
+  \end{minipage}
+
+  \fimSol
+  
+  \item $3 - x < 5 + 3x$\\
+  \iniSol
+    \begin{minipage}[b]{0.45\textwidth}
+      \begin{align*}
+        3 - x < 5 + 3x & \Rightarrow -x - 3x < 5 - 3\\
+          & \Rightarrow -4x < 2 \quad \cdot (-1)\\
+          & \Rightarrow 4x > 2\\
+          & \Rightarrow x > \dfrac{2}{4}\\
+          & \Rightarrow x > \dfrac{1}{2}
+      \end{align*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+      Conjunto-solução: $\left\lbrace x | x > \dfrac{1}{2}\right\rbrace$ ou $\left(\dfrac{1}{2}, + \infty\right)$.\\ \\
+      \begin{center}
+      \begin{tikzpicture}
+        \draw[-latex] (-3, 0) -- (3, 0) node[below] {$x$};
+        \draw (0, 5pt) -- (0, -5pt) node[below] {$0$};
+        \draw (1/2, 5pt) -- (1/2, -5pt) node[below] {$\dfrac{1}{2}$};
+        \draw[mainColor, ->, ultra thick] (1/2, 0) -- (2.8, 0);
+      \end{tikzpicture}
+      \end{center}
+    \end{minipage}
+  \fimSol
+  
+  \newpage
+  \item $\dfrac{2}{3}x - \dfrac{1}{2} \leq 0$\\
+  \iniSol
+    \begin{minipage}[b]{0.45\textwidth}
+      \begin{align*}
+        \dfrac{2}{3}x - \dfrac{1}{2} \leq 0 & \Rightarrow \dfrac{2}{3}x \leq \dfrac{1}{2}\\
+          & \Rightarrow x \leq \dfrac{1}{2} \cdot \dfrac{3}{2}\\
+          & \Rightarrow x \leq \dfrac{3}{4}
+      \end{align*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+      Conjunto-solução: $\left\lbrace x \leq \dfrac{3}{4}\right\rbrace$ ou $\left(-\infty, \dfrac{3}{4}\right]$.\\ \\
+      \begin{tikzpicture}
+        \draw[-latex] (-3, 0) -- (3, 0) node[below] {$x$};
+        \draw (0, 5pt) -- (0, -5pt) node[below] {$0$};
+        \draw (3/4, 5pt) -- (3/4, -5pt) node[below] {$\dfrac{3}{4}$};
+        \filldraw[mainColor, ultra thick] (3/4, 0) circle (2pt);
+        \draw[mainColor, ->, ultra thick] (3/4, 0) -- (-3, 0);
+      \end{tikzpicture}
+    \end{minipage}
+  \fimSol
+\end{enumerate}
